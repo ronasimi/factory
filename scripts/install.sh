@@ -60,6 +60,7 @@ cat > "$LAUNCHER" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
 export FACTORY_STATE_DIR="\${FACTORY_STATE_DIR:-$STATE_DIR}"
+export PI_SKIP_VERSION_CHECK="\${PI_SKIP_VERSION_CHECK:-1}"
 exec node "$INSTALL_DIR/dist/bin/factory.js" "\$@"
 EOF
 chmod +x "$LAUNCHER"

@@ -123,6 +123,7 @@ const child = spawn(process.execPath, nodeArgs, {
   env: {
     ...process.env,
     FACTORY_ACTIVE: '1',
+    PI_SKIP_VERSION_CHECK: process.env.PI_SKIP_VERSION_CHECK ?? '1',
   },
 });
 
