@@ -28,6 +28,13 @@ npm run bundle
 - `FACTORY_SIM_DB_PATH` (default: `~/.factory/sim.sqlite`)
 - `FACTORY_SIM_IDLE_MS` (default: `300000` — 5 minutes)
 
+## Bundled Addons & UI Plugins
+
+- `pi-durable-subagents` — Persistent subagents routed to `Instance` (`lfm-aa1`, max 3 slots).
+- `pi-web-access` — `web_search` and `fetch_content`.
+- `@yorch/pi-statusbar` — Theme-aware footer status bar.
+- `@nbafrank/pi-tks` — Live TPS + TTFT meter for local models.
+
 ## Commands
 
 - `/factory-slots` — Inspect `Singleton` (1 slot) and `Instance` (3 slots) concurrency usage.

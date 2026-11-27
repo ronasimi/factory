@@ -29,6 +29,8 @@
     "@earendil-works/pi-coding-agent": "1.6.0",
     "@earendil-works/pi-durable": "1.6.0",
     "@earendil-works/pi-tui": "1.6.0",
+    "@nbafrank/pi-tks": "^0.1.3",
+    "@yorch/pi-statusbar": "^0.4.3",
     "pi-web-access": "^0.48.0",
     "typebox": "1.3.27"
   },

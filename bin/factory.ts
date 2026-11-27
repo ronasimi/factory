@@ -54,9 +54,8 @@ function resolveDefaultExtensions(): string[] {
     extensions.push(factoryExt);
   }
 
-  // Ensure pi-web-access and pi-durable-subagents are loaded by default
-  // unless already configured in pi's settings.json packages list.
-  for (const pkgName of ['pi-web-access', 'pi-durable-subagents']) {
+  // Ensure default addons and UI plugins are loaded unless already configured in pi's settings.json.
+  for (const pkgName of ['pi-web-access', 'pi-durable-subagents', '@yorch/pi-statusbar', '@nbafrank/pi-tks']) {
     if (isPackageConfiguredInPiSettings(pkgName)) continue;
     try {
       const pkgJsonPath = require.resolve(`${pkgName}/package.json`);
