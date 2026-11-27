@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-bundle/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal

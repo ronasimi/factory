@@ -5,11 +5,19 @@ Companion agent harness built over [`earendil-works/pi`](https://github.com/eare
 ## Quick Start
 
 ```bash
-npm install
-npm run build
-npm test
-node ./dist/bin/factory.js --list-models factory-llama
+# Conflict-free install (isolated from stock `pi` binary and ~/.pi):
+bash scripts/install.sh
+
+# Or build a portable installer tarball:
+npm run bundle
 ```
+
+### Default Install Paths (No Stock `pi` Conflicts)
+
+- Launcher binary: `~/.local/bin/factory` (`FACTORY_BIN_DIR`)
+- Application bundle: `~/.local/share/factory` (`FACTORY_INSTALL_DIR`)
+- SIM & factory state: `~/.factory` (`FACTORY_STATE_DIR`)
+- Uninstall: `bash scripts/uninstall.sh` (add `--purge-state` to remove `~/.factory`)
 
 ## Configuration (Environment Variables)
 
@@ -17,7 +25,7 @@ node ./dist/bin/factory.js --list-models factory-llama
 - `FACTORY_LLAMA_API_KEY` (falls back to `LLAMA_SERVER_API_KEY` or `~/.pi/agent/models.json` `providers.desktop.apiKey`)
 - `FACTORY_ORCHESTRATOR_MODEL` (default: `lfm-aa1` placeholder)
 - `FACTORY_SUBAGENT_MODEL` (default: `lfm-aa1`)
-- `FACTORY_SIM_DB_PATH` (default: `~/.pi/factory/sim.sqlite`)
+- `FACTORY_SIM_DB_PATH` (default: `~/.factory/sim.sqlite`)
 - `FACTORY_SIM_IDLE_MS` (default: `300000` — 5 minutes)
 
 ## Commands

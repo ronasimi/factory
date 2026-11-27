@@ -64,7 +64,8 @@ export interface SimEvalRunInput {
 export function resolveSimDbPath(homeDir = homedir()): string {
   const fromEnv = process.env.FACTORY_SIM_DB_PATH;
   if (fromEnv && fromEnv.trim().length > 0) return fromEnv.trim();
-  return join(homeDir, '.pi', 'factory', 'sim.sqlite');
+  const stateDir = process.env.FACTORY_STATE_DIR?.trim() || join(homeDir, '.factory');
+  return join(stateDir, 'sim.sqlite');
 }
 
 export class SimStore {
